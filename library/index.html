@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./img/favicon.ico">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="background-library">
+            <header class="header">
+                <div class="header__wrap">
+                    <h1 class="header__name">Brooklyn Public Library</h1>
+                    <div class="header-box">
+                        <nav class="header__nav">
+                            <ul class="header__list">
+                                <li class="header__item">
+                                    <a href="#about" class="header__link">About</a>
+                                    </li>
+                                <li class="header__item">
+                                    <a href="#favorites" class="header__link">Favorites</a>
+                                </li>
+                                <li class="header__item">
+                                    <a href="#coffeeshop" class="header__link">Coffee shop</a>
+                                </li>
+                                <li class="header__item">
+                                    <a href="#contacts" class="header__link">Contacts</a>
+                                </li>
+                                <li class="header__item">
+                                    <a href="#librarycard" class="header__link">Library Card</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <img class="header__img" src="./img/svg/icon_profile.svg" alt="icon-profile">
+                    </div>
+                </div>
+                <section class="welcome">
+                    <h2>Welcome </h2>
+                    <p>to the Brooklyn</p>
+                    <p>Library</p> 
+                </section>
+            </header>
+        </div>
+        <div class="content">
+            <main class="main">
+                <section class="about title" id="about">
+                  <h2 class="about__title">About</h2>
+                  <p class="about__subtitle">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
+                  <div class="about__wrap">
+                      <div class="about__photo">
+                          <img src="./img/photo1.jpg" alt="photo">
+                      </div>
+                      <div class="about__photo">
+                          <img src="./img/photo2.jpg" alt="photo">
+                      </div>
+                      <div class="about__photo">
+                          <img src="./img/photo3.jpg" alt="photo">
+                      </div>
+                  </div>
+                  <div class="about__buttons__box">
+                    <div class="about__buttons">
+                        <a class="about__btn" href="#"><span class="btn_bej"></span></a>
+                        <a class="about__btn" href="#"><span class="about__btn__link"></span></a>
+                        <a class="about__btn" href="#"><span class="about__btn__link"></span></a>
+                      </div>
+                  </div>
+              </section>
+              <section class="favorites" id="favorites">
+                <h2 class="favorites__title title">Favorites</h2>
+                <p class="favorites__subtitle">Pick favorites of season</p>
+                <form class="form__wrap"  action="#">
+                    <div class="form__box">
+                        <label class="form__label">
+                            <input  checked class="real-radio-btn" type="radio" name="season" id="winter" value="winter">
+                            <span class="custom-radio-btn"></span>Winter
+                        </label>
+                    </div>
+                    <div class="form__box">
+                        <label class="form__label">
+                            <input class="real-radio-btn" type="radio" name="season" id="spring" value="spring">
+                            <span class="custom-radio-btn"></span>Spring
+                        </label>
+                    </div>
+                    <div class="form__box">
+                        <label class="form__label">
+                            <input class="real-radio-btn" type="radio" name="season" id="summer" value="summer">
+                            <span class="custom-radio-btn"></span>Summer
+                        </label>
+                    </div>
+                    <div class="form__box">
+                        <label class="form__label">
+                            <input class="real-radio-btn" type="radio" name="season" id="autumn" value="autumn">
+                            <span class="custom-radio-btn"></span>Autumn
+                        </label>
+                    </div>
+                </form>
+                <div class="favorites__wrap">
+                    <div class="favorites__line">
+                        <div class="favorites__card">
+                            <div class="favorites__box">
+                                <p class="favorites__headline">Staff Picks</p>
+                                <p class="favorites__name">the book eaters</p>
+                                <p class="favorites__author">By Sunyi Dean</p>
+                                <p class="favorites__text">An unusual sci-fi story about a book eater 
+                                woman who tries desperately to save her dangerous mind-eater son from 
+                                tradition and certain death. Complete with dysfunctional family values, 
+                                light Sapphic romance, and a strong, complex protagonist. Not for the faint 
+                                of heart.</p>
+                                <form action="#">
+                                    <button class="favorites__btn">Buy</button>
+                                </form>
+                                <img class="favorites__img" src="./img/book.png" alt="book">
+                            </div>
+                        </div>
+                        <div class="favorites__card">
+                            <div class="favorites__box">
+                                <p class="favorites__headline">Staff Picks</p>
+                                <p class="favorites__name">cackle</p>
+                                <p class="favorites__author">By Rachel Harrison</p>
+                                <p class="favorites__text">Are your Halloween movies of choice The Witches of Eastwick and 
+                                Practical Magic? Look no further than here - where a woman recovering from a breakup moves 
+                                to a quaint town in upstate New York and befriends a beautiful witch.</p>
+                                <form action="#">
+                                <button class="favorites__btn">Buy</button>
+                                </form>
+                                <img class="favorites__img" src="./img/book2.png" alt="book">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="favorites__line">
+                        <div class="favorites__card">
+                            <div class="favorites__box">
+                                <p class="favorites__headline">Staff Picks</p>
+                                <p class="favorites__name">Dante: Poet of the Secular World</p>
+                                <p class="favorites__author">By Erich Auerbach</p>
+                                <p class="favorites__text">Auerbach's engaging book places the 'Comedy' within the 
+                                tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness 
+                                as one who raised the individual and his drama of soul into something of divine 
+                                significance—an inspired introduction to Dante's main themes.</p>
+                                <form action="#">
+                                    <button class="favorites__btn">Buy</button>
+                                </form>
+                                <img class="favorites__img" src="./img/book3.png" alt="book">
+                            </div>
+                        </div>
+                        <div class="favorites__card">
+                            <div class="favorites__box">
+                                <p class="favorites__headline">Staff Picks</p>
+                                <p class="favorites__name">The Last Queen</p>  
+                                <p class="favorites__author">By Clive Irving</p>
+                                <p class="favorites__text">A timely and revelatory new biography of Queen Elizabeth 
+                                (and her family) exploring how the Windsors have evolved and thrived as the modern world 
+                                has changed around them.</p>
+                                <form action="#">
+                                    <button disabled class="favorites__btn btn__own">Own</button>
+                                </form>
+                                <img class="favorites__img" src="./img/book4.png" alt="book">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </section>
+              <section class="coffee" id="coffeeshop">
+                <h2 class="coffee__title title">Coffee shop</h2>
+                <p class="coffee__subtitle">In our library, we have of cozy coffee shop, welcoming in customers 
+                with frothy cappuccinos and friendly conversation. You can get a favorite book and read in coffee shop. Our barista to cook you best coffee, 
+                and also you can try desserts from bakery.</p>
+                <div class="coffe__wrap">
+                    <div class="coffee__tea">
+                        <p class="coffee__menu__title">Coffee & Tea </p>
+                        <div class="coffee__line">
+                            <div class="coffee__name">Cold Brew Coffee</div>
+                            <div class="coffee__price">$3</div>
+                        </div>
+                        <div class="coffee__line">
+                            <div class="coffee__name">French Press Pot</div>
+                            <div class="coffee__price">$5</div>
+                        </div>
+                        <div class="coffee__line">
+                            <div class="coffee__name">Espresso</div>
+                            <div class="coffee__price">$2</div>
+                        </div>
+                        <div class="coffee__line">
+                            <div class="coffee__name">Cappuccino</div>
+                            <div class="coffee__price">$4</div>
+                        </div>
+                        <div class="coffee__line">
+                            <div class="coffee__name">Hot tea</div>
+                            <div class="coffee__price">$2</div>
+                        </div>
+                        <div class="coffee__line">
+                            <div class="coffee__name">Cold tea</div>
+                            <div class="coffee__price">$2</div>
+                        </div>
+                    </div>
+                    <div class="coffee__cakes">
+                        <p class="coffee__menu__title coffee__menu__title-dessert">Desserts & Cakes  </p>
+                        <div class="coffee__line right-side">
+                            <div class="coffee__name">Forest Gateau</div>
+                            <div class="coffee__price">$16</div>
+                        </div>
+                        <div class="coffee__line right-side">
+                            <div class="coffee__name">Blue Moon</div>
+                            <div class="coffee__price">$16</div>
+                        </div>
+                        <div class="coffee__line right-side">
+                            <div class="coffee__name">Truffle Cake</div>
+                            <div class="coffee__price">$15</div>
+                        </div>
+                        <div class="coffee__line right-side">
+                            <div class="coffee__name">Chocolate Cake</div>
+                            <div class="coffee__price">$18</div>
+                        </div>
+                        <div class="coffee__line right-side">
+                            <div class="coffee__name">Poet’s Dream Cake</div>
+                            <div class="coffee__price">$16</div>
+                        </div>
+                        <div class="coffee__line right-side">
+                            <div class="coffee__name">Pineapple Cake</div>
+                            <div class="coffee__price">$14</div>
+                        </div>
+                    </div>
+                </div>
+              </section>
+              <section class="contacts" id="contacts">
+                <h2 class="contacts__title title">Our Contacts</h2>
+                <div class="contacts__box">
+                    <div class="contacts__phone">
+                        <p class="contacts__subtitle bold">For all Library inquiries:</p>
+                        <p class="contacts__number">Please call
+                            <a href="tel:+6177302370">(617) 730-2370</a>
+                        </p>
+                        <p class="contacts__number">For TTY service, please call
+                            <a href="tel:+6177302370">(617) 730-2370</a>
+                        </p>
+                        <p class="contacts__number">Putterham Library: 
+                            <a href="tel:+6177302385">(617) 730-2385</a>
+                        </p>
+                        <p class="contacts__senior bold">Senior Staff</p>
+                        <p>Library Director:
+                            <a class="bold" href="mailto:amandahirst@gmail.com">Amanda Hirst</a>
+                        </p>
+                    </div>
+                    <div class="contacts__map">
+                        <img  class="contacts__img" src="./img/map.png" alt="map">
+                    </div>
+                </div>
+              </section>
+              <section class="cards" id="librarycard">
+                <h2 class="cards__title title">Digital Library Cards</h2>
+                <div class="cards__box">
+                    <div class="cards__have">
+                        <div class="cards__subtitle">Find your Library card</div>
+                        <form class="cards__border" action="#">
+                            <div class="cards__input">
+                                <p class="cards__input__text">Brooklyn Public Library</p>
+                                <input class="cards__field" type="text" placeholder="Reader's name" type="text">
+                                <input class="cards__field" type="number" placeholder="Card number" type="text">
+                            </div>
+                            <button class="cards__btn">Check the card</button>
+                        </form>  
+                    </div>
+                    <div class="cards__get">
+                        <p class="cards__get__subtitle">Get a reader card</p>
+                        <p class="cards__text">You will be able to see a reader card after logging 
+                        into account or you can register a new account</p>
+                        <button class="cards__get__btn">Sign Up</button>
+                        <button class="cards__get__btn btn__login">Log in</button>
+                    </div> 
+                </div>
+              </section>
+            </main>
+        </div>
+        <div class="footer__wrap">
+            <footer class="footer">
+                <div class="footer__info">
+                    <div class="footer__place">
+                        <p class="address">
+                            <a class="address__link" target="_blank" href="https://www.google.com/maps/search/286+Cadman+Plaza,+New+York,+NY+11238,+United+States/@40.6956377,-73.9932709,17z/data=!3m1!4b1?hl=ru&entry=ttu">286 Cadman Plaza, New York, NY 11238, United States</a> 
+                        </p>  
+                        <ul class="media">
+                            <li><a class="media__link" target="_blank" href="https://twitter.com/"><img class="footer__img" src="./img/svg/twitter.svg" alt="twitter"></a></li>
+                            <li><a class="media__link" target="_blank" href="https://www.instagram.com/"><img class="footer__img" src="./img/svg/instagram.svg" alt="instagram"></a></li>
+                            <li><a class="media__link" target="_blank" href="https://www.facebook.com/"><img class="footer__img" src="./img/svg/facebook.svg" alt="facebook"></a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__time">
+                        <p class="workdays">
+                            Mon - Fri <br>
+                            08:00 am - 07:00 pm
+                        </p>
+                        <p class="dayoff">
+                            Sat - Sun <br>
+                            10:00 am - 06:00 pm
+                        </p>
+                    </div>
+                </div>
+                <div class="footer__course">
+                    <div>
+                        <a class="footer__link" target="_blank" href="">2023</a>
+                    </div>
+                    <div>
+                        <a class="footer__link" target="_blank" href="https://rs.school/js-stage0/">The Rolling Scopes School</a>
+                    </div>
+                    <div class="footer__name">
+                        <a class="footer__link" target="_blank" href="https://github.com/OksanaSokal">Oksana Petrenko</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
