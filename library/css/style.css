@@ -28,10 +28,10 @@
     justify-content: space-between;
     height: 90px;
     align-items: center;
+    background-color: #0C0C0E;
  }
 
  .header__nav {
-    
     height: 50px;
  }
 
@@ -60,8 +60,9 @@
  }
  .background-library {
     height: 690px;
-    background: url(../img/Welcome-1.png) no-repeat center;
+   background-image: url(../img/Welcome.png);
     background-size: cover;
+    background-position: center;
  }
 
  .background-library::after {
@@ -109,7 +110,7 @@
     max-height: 220px;
     padding: 35px 40px;
     margin: 220px 840px 160px 0px;
-    background-color: #0C0C0E;
+   background-color: #0C0C0E;
     color: #FFF;
     text-align: center;
     font-family: Forum;
@@ -280,6 +281,18 @@
     margin-left: -5px;
     margin-top: -3px;
     cursor: pointer;  /*увеличиваем область наведения*/
+}
+
+.spring {
+    display: none;
+}
+
+.summer {
+    display: none;
+}
+
+.autumn {
+    display: none;
 }
 
 .favorites__line {
@@ -507,6 +520,16 @@
     padding-bottom: 20px;
 }
 
+.contacts__link {
+    transition: font-weight 0.5s;
+    transition: opacity 0.6s;
+}
+
+.contacts__link:hover {
+    font-weight: bold;
+    opacity: 0.6;
+}
+
 .contacts__map {
     position: relative;
     width: 696px;
@@ -596,6 +619,15 @@
     border: 1px solid #0C0C0E;
     margin: 3px 179px 30px;
     padding: 10px 40px;
+    transition: border 0.7s;
+    transition: background-color 0.6s;
+}
+
+.cards__btn:hover{
+    background-color: #BB945F;
+    border: 2px solid #BB945F;
+    border-radius: 2px;
+    padding: 9px 39px;
 }
 
 .cards__get {
@@ -629,6 +661,15 @@
     border-radius: 2px;
     border: 1px solid #0C0C0E;
     padding: 10px 15px;
+    transition: border 0.7s;
+    transition: background-color 0.6s;
+}
+
+.cards__get__btn:hover{
+    background-color: #BB945F;
+    border: 2px solid #BB945F;
+    border-radius: 2px;
+    padding: 9px 14px;
 }
 
 .btn__login {
