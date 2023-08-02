@@ -58,23 +58,17 @@
  .header__item:last-child {
     margin-right: 40px;
  }
- .background-library {
-    height: 690px;
-   background-image: url(../img/Welcome.png);
-    background-size: cover;
-    background-position: center;
- }
 
  .background-library::after {
     content: "";
     position: absolute;
-    top: 0;
+    top: 45px;
     left: 0;
     bottom: 0;
     right: 0;
     z-index: 2;
-    height: 690px;
-    width: 1440px;
+    max-height: 600px;
+    max-width: 1440px;
     margin: 0 auto;
     background: url(../img/overlay.png) no-repeat center;
     background-size: cover;
@@ -82,13 +76,13 @@
 
  .header__name {
     z-index: 5;
-    margin: 20px 454px 20px 20px;
+    margin: 20px 0px 20px 20px;
     color: #FFF;
     font-family: Forum;
     font-size: 30px;
     line-height: 50px;
     letter-spacing: 0.6px;
-    width: 294px;
+    max-width: 294px;
     height: 50px;
  }
 
@@ -106,11 +100,11 @@
 }
 
 .welcome {
-    max-width: 600px;
+    width: 600px;
     max-height: 220px;
     padding: 35px 40px;
-    margin: 220px 840px 160px 0px;
-   background-color: #0C0C0E;
+    margin: 220px 0px 0px 0px;
+    background-color: #0C0C0E;
     color: #FFF;
     text-align: center;
     font-family: Forum;
@@ -119,8 +113,16 @@
     letter-spacing: 3px;
     text-transform: uppercase;
     z-index: 5;
-    position: relative;
+    position: absolute;
 }
+
+.welcome__background {
+    background: url(../img/welcome_origin.jpg) no-repeat;
+    background-position: right;
+    height: 600px;
+    position: relative;
+    background-size: cover;
+ }
 
 /*header end*/
 
@@ -344,7 +346,7 @@
 }
 
 .favorites__text {
-    width: 355px;
+    max-width: 355px;
     height: 320px;
     margin-left: 20px;
     font-size: 15px;
@@ -363,8 +365,8 @@
     letter-spacing: 1px;
     transition: border 0.7s;
     transition:  background-color 0.6s;
-    width: 75px;
-    height: 30px;
+    max-width: 75px;
+    max-height: 30px;
 }
 
 .favorites__btn:hover{
@@ -384,6 +386,7 @@
     position: absolute;
     bottom: -1px;
     right: -40px;
+    max-width: 100%;
 }
 
 /*section favorites end*/
@@ -395,7 +398,7 @@
 }
 
 .coffee__subtitle {
-    width: 1400px;
+    max-width: 1400px;
     margin: 61px 0px 40px 0px;
     text-align: center;
     font-size: 20px;
@@ -434,7 +437,7 @@
 }
 
 .coffee__cakes {
-    width: 482px;
+    max-width: 482px;
 }
 
 .coffee__line {
@@ -452,8 +455,8 @@
     content: "";
     position: absolute;
     background: #BB945F;
-    width: 100px;
-    height: 1px;
+    max-width: 100px;
+    max-height: 1px;
     right: 81px;
     top: 25%;
 }
@@ -462,7 +465,7 @@
     content: "";
     position: absolute;
     background: #BB945F;
-    width: 100px;
+    max-width: 100px;
     height: 1px;
     right: 91px;
     top: 25%;
@@ -532,7 +535,7 @@
 
 .contacts__map {
     position: relative;
-    width: 696px;
+    max-width: 696px;
     height: 414px;
 }
 
