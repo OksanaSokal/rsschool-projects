@@ -35,6 +35,9 @@
                             </ul>
                         </nav>
                         <img class="header__img" src="./img/svg/icon_profile.svg" alt="icon-profile">
+                        <div class="burger">
+                            <span class="burger__line"></span>
+                        </div>
                     </div>
                 </div>
                 <div class="welcome__background">
@@ -503,5 +506,20 @@
             </footer>
         </div>
     </div>
+
+
+
+    <script>
+       document.querySelector('.burger').addEventListener('click',function() {
+            this.classList.toggle('active');
+            document.querySelector('.header__nav').classList.toggle('active');
+        }) 
+
+       /** $(document).ready(function() {
+            $('.burger').click(function(event) {
+                ('.burger,.header__nav').toggleClass('active');
+            });
+        })**/
+    </script>
 </body>
 </html>
