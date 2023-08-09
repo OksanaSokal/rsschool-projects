@@ -55,21 +55,25 @@
                   <h2 class="about__title">About</h2>
                   <p class="about__subtitle">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
                   <div class="about__wrap">
+                    <button class="about__btn-left"></button>
                       <div class="about__photo">
                           <img src="./img/photo1.jpg" alt="photo">
                       </div>
-                      <div class="about__photo">
+                      <div class="about__photo cover__photo2">
                           <img src="./img/photo2.jpg" alt="photo">
                       </div>
-                      <div class="about__photo">
+                      <div class="about__photo cover__photo3">
                           <img src="./img/photo3.jpg" alt="photo">
                       </div>
+                      <button class="about__btn-right"></button>
                   </div>
                   <div class="about__buttons__box">
                     <div class="about__buttons">
                         <a class="about__btn" href="#"><span class="btn_bej"></span></a>
                         <a class="about__btn" href="#"><span class="about__btn__link"></span></a>
                         <a class="about__btn" href="#"><span class="about__btn__link"></span></a>
+                        <a class="about__btn cover__btn" href="#"><span class="about__btn__link"></span></a>
+                        <a class="about__btn cover__btn" href="#"><span class="about__btn__link"></span></a>
                       </div>
                   </div>
               </section>
@@ -360,7 +364,7 @@
                 <p class="coffee__subtitle">In our library, we have of cozy coffee shop, welcoming in customers 
                 with frothy cappuccinos and friendly conversation. You can get a favorite book and read in coffee shop. Our barista to cook you best coffee, 
                 and also you can try desserts from bakery.</p>
-                <div class="coffe__wrap">
+                <div class="coffee__wrap">
                     <div class="coffee__tea">
                         <p class="coffee__menu__title">Coffee & Tea </p>
                         <div class="coffee__line">
@@ -513,13 +517,8 @@
        document.querySelector('.burger').addEventListener('click',function() {
             this.classList.toggle('active');
             document.querySelector('.header__nav').classList.toggle('active');
+            document.querySelector('.header__img').classList.toggle('active');
         }) 
-
-       /** $(document).ready(function() {
-            $('.burger').click(function(event) {
-                ('.burger,.header__nav').toggleClass('active');
-            });
-        })**/
     </script>
 </body>
 </html>
