@@ -922,9 +922,8 @@
         height: 570px;
         text-align: center;
         z-index: 6;
-        padding: 100px 0px;
+        padding: 100px 0px 100px 25px;
         transition: all 0.3s ease 0s;
-        padding-left: 25px;
     }
     .header__nav.active {
         top: 0;
