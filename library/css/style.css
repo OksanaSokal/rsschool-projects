@@ -179,12 +179,41 @@
     text-transform: none;
     letter-spacing: 0;
 }
-
-.about__wrap {
+.about__wrap__photos {
     display: flex;
-    justify-content: space-between;   
+}
+.about__wrap {
+  /** max-width: 1400px;   **/
+  overflow: hidden;
+  position: relative;
 }
 
+.slider__line {
+    display: flex;
+    justify-content: space-between; 
+    gap: 25px;
+    max-width: 2350px; 
+    position: relative;
+    left: 0;
+    transition: all ease 1s;
+}
+
+.about__btn-left {
+        width: 24px;
+        height: 24px;
+        background: url(../img/svg/left.svg) center no-repeat;
+        margin-top: 290px;
+        margin-left: 59px;
+        border: none;
+    }
+.about__btn-right {
+        width: 24px;
+        height: 24px;
+        background: url(../img/svg/right.svg) center no-repeat;
+        margin-top: 290px;
+        margin-right: 59px;
+        border: none;
+    }
 .about__btn-right, .about__btn-left  {
     display: none;
 }
@@ -214,8 +243,20 @@
     background-color: #0C0C0E;
     border: 1px solid #0C0C0E;
     border-radius: 50%;
+    cursor: pointer;
 }
 
+.about__btn__link:hover {
+    background-color: #BB945F;
+    border-color: #BB945F;
+}
+
+.active-dot {
+    background-color: #BB945F;
+    border-color: #BB945F;
+}
+
+/**
 .btn_bej {
     display: block;
     height: 16px;
@@ -223,7 +264,7 @@
     background-color: #BB945F;
     border: 1px solid #BB945F;
     border-radius: 50%;
-}
+}**/
 
 .cover__btn {
     display: none;
@@ -767,7 +808,7 @@
     outline: none !important;
 }
 /*footer end*/
-
+/**
 @media (max-width: 1400px) {
     .cover__photo3 {
         display: none;
@@ -776,33 +817,27 @@
         justify-content: center;
         gap: 40px;
      }
-}
+}**/
 
-@media (max-width: 1235px) {
-    .cover__photo2 {
-        display: none;
-    }
-    .about__photo {
+@media (max-width: 1400px)  {
+    .about__wrap {
+        max-width: 450px;
         margin: 0 auto;
     }
     .about__btn-left {
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        background: url(../img/svg/left.svg) center no-repeat;
-        margin-top: 290px;
-        margin-left: 59px;
-        border: none;
+        display: block;
+
     }
     .about__btn-right {
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        background: url(../img/svg/right.svg) center no-repeat;
-        margin-top: 290px;
-        margin-right: 59px;
-        border: none;
+        display: block;
     }
+}
+
+@media (max-width: 1235px) {
+        .about__photo {
+        margin: 0 auto;
+    }
+    
     .cover__btn {
         display: block;
     }

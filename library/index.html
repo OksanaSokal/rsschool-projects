@@ -54,8 +54,11 @@
                 <section class="about title" id="about">
                   <h2 class="about__title">About</h2>
                   <p class="about__subtitle">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
-                  <div class="about__wrap">
+                  <div class="about__wrap__photos">
                     <button class="about__btn-left"></button>
+                  <div class="about__wrap">
+                    <div class="slider__line">
+                       
                       <div class="about__photo">
                           <img src="./img/photo1.jpg" alt="photo">
                       </div>
@@ -65,15 +68,24 @@
                       <div class="about__photo cover__photo3">
                           <img src="./img/photo3.jpg" alt="photo">
                       </div>
-                      <button class="about__btn-right"></button>
+                      <div class="about__photo none_photo">
+                        <img src="./img/photo4.jpg" alt="photo">
+                    </div>
+                    <div class="about__photo none_photo">
+                        <img src="./img/photo5.jpg" alt="photo">
+                    </div>
+                      
+                    </div>
+                  </div>
+                  <button class="about__btn-right"></button>
                   </div>
                   <div class="about__buttons__box">
                     <div class="about__buttons">
-                        <a class="about__btn" href="#"><span class="btn_bej"></span></a>
-                        <a class="about__btn" href="#"><span class="about__btn__link"></span></a>
-                        <a class="about__btn" href="#"><span class="about__btn__link"></span></a>
-                        <a class="about__btn cover__btn" href="#"><span class="about__btn__link"></span></a>
-                        <a class="about__btn cover__btn" href="#"><span class="about__btn__link"></span></a>
+                        <a class="about__btn btn__left"><span class="about__btn__link active-dot"></span></a>
+                        <a class="about__btn"><span class="about__btn__link"></span></a>
+                        <a class="about__btn btn__right"><span class="about__btn__link"></span></a>
+                        <a class="about__btn cover__btn"><span class="about__btn__link"></span></a>
+                        <a class="about__btn cover__btn"><span class="about__btn__link"></span></a>
                       </div>
                   </div>
               </section>
@@ -520,5 +532,6 @@
             document.querySelector('.header__img').classList.toggle('active');
         }) 
     </script>
+    <script src="./script.js"></script>
 </body>
 </html>
