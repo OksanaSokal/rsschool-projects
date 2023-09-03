@@ -20,6 +20,150 @@
     margin: 0 auto;
  }
 
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s, visibility 0.4s;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.open{
+     visibility: visible;
+     opacity: 1;
+}
+
+.modal__box {
+    width: 80px;
+    height: 115px;
+    z-index: 1;
+    background-color: #FFFFFF;
+    transform: scale(0);
+    transition: transform 0.8s;
+}
+
+.modal.open .modal__box{
+    transform: scale(1);
+}
+
+.modal__title {
+    font-size: 15px;
+    text-align: center;
+    font-weight: 700;
+    line-height: 20px;
+    margin: 5px 0px 20px;
+    }
+
+.modal__title::after {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 40px;
+    height: 1px;
+    background-color:  #BB945F;;
+    right: 0;
+    margin: 0 auto;
+    display: block;
+}
+
+    .modal__str {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 10px;
+    }
+
+    .modal__link {
+        cursor: pointer;
+    }
+
+    .modal__reg {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s, visibility 0.4s;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .reg__box {
+        padding: 20px 25px;
+        width: 250px;
+        height: 382px;
+        z-index: 1;
+        background-color: #FFFFFF;
+        transform: scale(0);
+        transition: transform 0.8s;
+       }
+
+       .reg__str {
+        text-align: left;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0.3px;
+        margin-bottom: 10px;
+       }
+
+       .have__str {
+        text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+        font-size: 10px;
+        font-weight: 400;
+       }
+
+       .reg__input {
+        margin-bottom: 10px;
+        border: 1px solid #BB945F;
+       }
+
+       .reg__link {
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-decoration-line: underline;
+        display: inline-block;
+        margin-left: 10px;
+       }
+
+       .btn__submit {
+        padding: 9px 16px;
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        border-radius: 2px;
+        border: 1px solid #0C0C0E;
+       }
+
+    .modal__reg.open_reg{
+        visibility: visible;
+        opacity: 1;
+   }
+
+   .modal__reg.open_reg .reg__box{
+    transform: scale(1);
+   }
+
+   .registr__title {
+    text-align: center;
+    font-family: Forum;
+    font-size: 20px;
+    line-height: 20px; 
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+   }
+
 /*header start*/
 
  .header__wrap {
@@ -353,6 +497,7 @@
 .autumn {
     display: none;
 }
+
 
 .favorites__line {
     display: flex;
