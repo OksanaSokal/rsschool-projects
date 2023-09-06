@@ -32,8 +32,8 @@
     opacity: 0;
     transition: opacity 0.4s, visibility 0.4s;
     display: grid;
+    text-align: center;
     justify-content: center;
-    align-items: center;
 }
 
 .modal.open{
@@ -84,7 +84,7 @@
     }
 
     .modal__link {
-        cursor: pointer;
+    cursor: pointer;
     }
 
     .modal__reg {
@@ -96,6 +96,16 @@
     align-items: center;
     }
 
+    .close__btn {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 15px;
+        height: 15px;
+        background: url('/library/img/svg/close_btn.svg') 0 0/contain no-repeat;
+        border: none;
+        background-color: transparent;
+}
     .reg__box {
         padding: 20px 25px;
         width: 250px;
@@ -104,6 +114,7 @@
         background-color: #FFFFFF;
         transform: scale(0);
         transition: transform 0.8s;
+        position: relative;
        }
 
        .reg__str {
@@ -134,9 +145,18 @@
         margin-left: 10px;
        }
 
+       .error .error__field {
+        border-color: #903826;
+       }
+
+       .error__label {
+        color: #903826;
+        margin: 0;
+       }
+
        .btn__submit {
         padding: 9px 16px;
-        margin-bottom: 10px;
+        margin: 10px 0px;
         text-align: center;
         font-size: 10px;
         font-weight: 700;
@@ -163,6 +183,189 @@
     text-transform: uppercase;
     margin-bottom: 20px;
    }
+
+   .modal__profile {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s, visibility 0.4s;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .profile__box {
+        width: 80px;
+        height: 115px;
+        z-index: 1;
+        background-color: #FFFFFF;
+        transform: scale(0);
+        transition: transform 0.8s;
+        position: relative;
+       }
+
+    .modal__profile.open__prof{
+    visibility: visible;
+    opacity: 1;
+    z-index: 10;
+   }
+
+   .modal__profile.open__prof .profile__box{
+    transform: scale(1);
+   }
+
+   .profile__number {
+    font-size: 13px;
+   }
+
+   .profile__link {
+    cursor: pointer;
+   }
+
+   .logout__link {
+    cursor: pointer;
+   }
+
+   .modal__card {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s, visibility 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .card__box {
+        width: 80px;
+        height: 115px;
+        z-index: 1;
+        background-color: #FFFFFF;
+        transform: scale(0);
+        transition: transform 0.8s;
+        position: relative;
+       }
+
+    .modal__card.open__card{
+    visibility: visible;
+    opacity: 1;
+    z-index: 10;
+   }
+
+   .modal__card.open__card .card__box{
+    transform: scale(1);
+   }
+
+
+   .card__box {
+    width: 600px;
+    height: 400px;
+    display: flex;
+   }
+
+   .card__black {
+    width: 170px;
+    background-color:  #0C0C0E;
+   }
+
+   .card__initials {
+    color: #BB945F;
+    text-align: center;
+    padding-top: 30px;
+    line-height: 20px;
+    text-transform: uppercase;
+    background: #FFF;
+    width: 80px;
+    height: 80px;
+    margin: 140px  auto 15px;
+   }
+
+   .card__name {
+    width: 120px;
+    height: 30px;
+    background: #FFF;
+    color: #000;
+    line-height: 20px;
+    margin: 0 auto;
+    padding-top: 5px;
+   }
+
+   .card__white {
+    padding-left: 20px;
+    text-align: left;
+   }
+
+   .close__profile__btn {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    width: 15px;
+    height: 15px;
+    background: url('/library/img/svg/close_btn.svg') 0 0/contain no-repeat;
+    border: none;
+    background-color: transparent;
+   }
+
+   .card__title {
+    font-family: Forum;
+    font-size: 40px;
+    line-height: 20px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin: 35px 0px 40px;
+   }
+
+   .card__count {
+    display: flex;
+    margin-bottom: 20px;
+   }
+
+   .card__count_item {
+    margin-right: 20px;
+   }
+
+   .card__rented {
+    font-size: 20px;
+    line-height: 20px; /* 100% */
+    letter-spacing: 0.4px;
+    margin-bottom: 10px;
+   }
+
+   .card__img {
+    margin-bottom: 10px;
+   }
+
+   .card__howmuch {
+    font-size: 10px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+   }
+
+   .card__subtitle {
+    color: #0C0C0E;
+    font-size: 25px;
+    line-height: 20px;
+    margin-bottom: 40px;
+   }
+
+   .card__number {
+    text-align: left;
+    width: 125px;
+    margin-right: 15px;
+    color: #0C0C0E;
+    font-size: 20px;
+    line-height: 20px;
+   }
+
+   .card__usernumber {
+    margin-right: 15px;
+    color: #BB945F;
+    font-size: 20px;
+    line-height: 20px;
+   }
+
+   .card__copy {
+    cursor: pointer;
+   }
+
 
 /*header start*/
 
@@ -242,6 +445,25 @@
     margin: 31px 20px 31px 0px;
     z-index: 5;
 }
+
+.user__letters {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #FFF;
+    color: #BB945F;
+    font-size: 18px;
+    font-family: Forum;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 31px 20px 31px 0px;
+    text-align: center;
+    padding-top:5px;
+    z-index: 6;
+    cursor: pointer;
+}
+
 
 .burger {
     display: none;
