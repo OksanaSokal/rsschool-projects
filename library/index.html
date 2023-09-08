@@ -9,6 +9,7 @@
     <link rel="icon" href="./img/favicon.ico">
 </head>
 <body>
+    
     <div class="wrapper">
         <div class="background-library">
             <header class="header">
@@ -34,7 +35,81 @@
                                 </li>
                             </ul>
                         </nav>
-                        <img class="header__img" src="./img/svg/icon_profile.svg" alt="icon-profile">
+                        <img class="header__img" id="open__modal-btn" src="./img/svg/icon_profile.svg" alt="icon-profile">
+                        <div class="modal" id="my__modal">
+                            <div class="modal__box" id="modalbox">
+                                <h3 class="modal__title">Profile</h3>
+                                <p class="modal__str">Log In</p>
+                                <p class="modal__str modal__link" id="open__registr-btn">Register</p>
+                            </div>
+                            <div class="modal__reg" id="registration">
+                                <div class="reg__box">
+                                    <button class="close__btn" id="close__modal"></button>
+                                    <h3 class="registr__title">Register</h3>
+                                    <form action="" class="form" id="add__form">
+                                        <p class="reg__str">First name</p>
+                                        <div class="input__box">
+                                            <input class="reg__input error__field" type="text" id="firstname">
+                                        </div>
+                                        <p class="reg__str">Last name</p>
+                                        <div class="input__box">
+                                            <input class="reg__input error__field" type="text" id="lastname">
+                                        </div>
+                                        <p class="reg__str">E-mail</p>
+                                        <div class="input__box">
+                                            <input class="reg__input error__field" type="email" id="email">
+                                        </div>
+                                        <p class="reg__str">Password</p>
+                                        <div class="input__box">
+                                            <input data-max-length="8" class="reg__input error__field" type="password" autocomplete="on" id="password">
+                                        </div>
+                                        <button class="btn__submit" type="submit" id="submit">Sign Up</button>
+                                    </form>
+                                    <p class="have__str">Already have an account?<a class="reg__link">Login</a></p> 
+                                </div>
+                            </div>
+                            <div class="modal__profile" id="profile__modal">
+                                <div class="profile__box" id="profilebox">
+                                    <h3 class="modal__title profile__number"></h3>
+                                    <p class="modal__str profile__link">My profile</p>
+                                    <p class="modal__str logout__link" id="open__myprofile-btn">Log Out</p>
+                                </div>
+                            </div>
+                            <div class="modal__card" id="card__modal">
+                                <div class="card__box" id="cardbox">
+                                    <div class="card__black">
+                                        <div class="card__initials"></div>
+                                        <p class="card__name"></p>
+                                    </div>
+                                    <div class="card__white">
+                                        <button class="close__profile__btn" id="close__profile__modal"></button>
+                                        <h3 class="card__title">My profile</h3>
+                                        <div class="card__count">
+                                            <div class="card__count_item">
+                                                <h4 class="card__rented">Visits</h4>
+                                                <img class="card__img" src="img/svg/union.svg" alt="visit" class="card__icon">
+                                                <p class="card__howmuch"></p>
+                                            </div>
+                                            <div class="card__count_item">
+                                                <h4 class="card__rented">Bonuses</h4>
+                                                <img class="card__img" src="img/svg/star.svg" alt="Bonuses" class="card__icon">
+                                                <p class="card__howmuch">1240</p>
+                                            </div>
+                                            <div class="card__count_item">
+                                                <h4 class="card__rented">Books</h4>
+                                                <img class="card__img" src="img/svg/book.svg" alt="books" class="card__icon">
+                                                <p class="card__howmuch"></p>
+                                            </div>
+                                        </div>
+                                        <p class="card__subtitle">Rented books</p>
+                                        <ul class="card__rented"></ul>
+                                        <span class="card__number">Card number</span>
+                                        <span class="card__usernumber" id="usernumber"></span>
+                                        <img class="card__copy" src="img/svg/copy.svg" alt="copy">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="burger">
                             <span class="burger__line"></span>
                         </div>
@@ -522,7 +597,7 @@
             </footer>
         </div>
     </div>
-
+    
 
 
     <script>
