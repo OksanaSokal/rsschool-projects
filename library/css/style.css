@@ -92,6 +92,13 @@ body {
 }
 
 .modal__reg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.3);
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.4s, visibility 0.4s;
@@ -140,6 +147,8 @@ body {
   margin-bottom: 10px;
   border: 1px solid #bb945f;
   color: #bb945f;
+  width: 200px;
+  height: 20px;
 }
 
 .reg__link {
@@ -153,15 +162,23 @@ body {
 .error .error__field {
   border-color: #903826;
 }
-
+/* delete later */
 .error__label {
   color: #903826;
   margin: 0;
   font-size: 10px;
 }
 
+.new-error-label {
+  .error__label {
+    color: #903826;
+    margin: 0;
+    font-size: 10px;
+  }
+}
+
 .btn__submit {
-  padding: 9px 16px;
+  padding: 9px 15px;
   margin: 10px 0px;
   text-align: center;
   font-size: 10px;
@@ -218,6 +235,7 @@ body {
   z-index: 10;
   position: relative;
   transform: scale(0);
+  transition: transform 0.8s;
 }
 
 .modal__login.open__login {
@@ -310,6 +328,13 @@ body {
 }
 
 .modal__profile {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.3);
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.4s, visibility 0.4s;
@@ -351,6 +376,13 @@ body {
 }
 
 .modal__card {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.3);
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.4s, visibility 0.4s;
@@ -403,6 +435,7 @@ body {
 }
 
 .card__name {
+  text-align: center;
   width: 120px;
   min-height: 30px;
   background: #fff;
@@ -434,7 +467,7 @@ body {
   line-height: 20px;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  margin: 35px 0px 40px;
+  margin: 40px 0px 40px;
 }
 
 .card__count {
@@ -463,6 +496,11 @@ body {
   letter-spacing: 0.2px;
 }
 
+.card__howmuch__visit {
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+}
 .card__subtitle {
   color: #0c0c0e;
   font-size: 25px;
@@ -780,6 +818,10 @@ li.rented__list:last-child {
 
 /*modal buy card start*/
 
+.cvc__str {
+  margin-bottom: 10px;
+}
+
 .modal__buy__card {
   position: fixed;
   left: 0;
@@ -908,6 +950,7 @@ li.rented__list:last-child {
 }
 
 .modal__buy__price {
+  font-size: 20px;
   color: #0c0c0e;
   font-weight: 700;
   line-height: 20px; /* 100% */
@@ -1408,6 +1451,26 @@ a {
   padding: 9px 14px;
 }
 
+.new__card__profile__btn {
+  margin-left: 15px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  border: 1px solid #0c0c0e;
+  padding: 10px 15px;
+  transition: border 0.7s;
+  transition: background-color 0.6s;
+}
+
+.new__card__profile__btn:hover {
+  background-color: #bb945f;
+  border: 2px solid #bb945f;
+  border-radius: 2px;
+  padding: 9px 14px;
+}
+
 .btn__login {
   width: 75px;
 }
@@ -1566,6 +1629,7 @@ a {
     height: 390px;
     margin-bottom: 21px;
   }
+
   .cards__get__btn {
     margin-left: 0px;
     width: 75px;

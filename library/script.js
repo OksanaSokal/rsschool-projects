@@ -113,8 +113,6 @@ const fadeOut = (el, timeout) => {
   }, timeout);
 };
 
-// // мои варианты
-
 const winter = document.querySelector('.winter');
 const spring = document.querySelector('.spring');
 const summer = document.querySelector('.summer');
@@ -124,43 +122,6 @@ const btnWinter = document.getElementById('winter');
 const btnSpring = document.getElementById('spring');
 const btnSummer = document.getElementById('summer');
 const btnAutumn = document.getElementById('autumn');
-
-// const seasonBlock = document.querySelectorAll('.favorites__wrap');
-// const btnBlock = document.querySelectorAll('.real-radio-btn');
-
-// btnWinter.addEventListener('click', function () {
-//   winter.classList.add('fade_in');
-//   winter.style.display = 'block';
-//   summer.style.display = 'none';
-//   autumn.style.display = 'none';
-//   spring.style.display = 'none';
-// });
-
-// btnSpring.addEventListener('click', function () {
-//   spring.classList.add('fade_in');
-//   spring.style.display = 'block';
-//   summer.style.display = 'none';
-//   autumn.style.display = 'none';
-//   winter.style.display = 'none';
-// });
-
-// btnSummer.addEventListener('click', function () {
-//   summer.classList.add('fade_in');
-//   summer.style.display = 'block';
-//   spring.style.display = 'none';
-//   autumn.style.display = 'none';
-//   winter.style.display = 'none';
-// });
-
-// btnAutumn.addEventListener('click', function () {
-//   autumn.classList.add('fade_in');
-//   autumn.style.display = 'block';
-//   spring.style.display = 'none';
-//   summer.style.display = 'none';
-//   winter.style.display = 'none';
-// });
-
-// else
 
 btnWinter.addEventListener('click', (e) => {
   let display = winter.style.display;
@@ -216,7 +177,7 @@ const iconBtn = document.getElementById('open__modal-btn');
 
 iconBtn.addEventListener('click', function () {
   document.getElementById('my__modal').classList.add('open');
-  document.getElementById('registration').style.display = 'none';
+  // document.getElementById('registration').style.display = 'none';
   document.querySelector('.modal__box').style.display = 'block';
 });
 
@@ -241,18 +202,18 @@ const regBtn = document.getElementById('open__registr-btn');
 //открытие по строке registration
 regBtn.addEventListener('click', function () {
   document.getElementById('registration').classList.add('open_reg');
-  document.getElementById('registration').style.display = 'block';
-  document.querySelector('.modal__box').style.display = 'none';
+  document.getElementById('my__modal').classList.remove('open');
+  // document.getElementById('registration').style.display = 'block';
+  // document.querySelector('.modal__box').style.display = 'none';
 });
 
 const regOpenSignUp = document.getElementById('card_get_btn');
 //открытие по кнопке sign up
 regOpenSignUp.addEventListener('click', function () {
-  console.log('true');
-  document.getElementById('my__modal').classList.add('open');
+  // document.getElementById('my__modal').classList.add('open');
   document.getElementById('registration').classList.add('open_reg');
-  document.getElementById('registration').style.display = 'block';
-  document.querySelector('.modal__box').style.display = 'none';
+  // document.getElementById('registration').style.display = 'block';
+  // document.querySelector('.modal__box').style.display = 'none';
 });
 
 document.getElementById('close__modal').addEventListener('click', function () {
@@ -261,7 +222,7 @@ document.getElementById('close__modal').addEventListener('click', function () {
 });
 
 document
-  .querySelector('#my__modal .reg__box')
+  .querySelector('#registration .reg__box')
   .addEventListener('click', (event) => {
     event._isClickWithInModalReg = true;
   });
@@ -320,6 +281,15 @@ document.querySelector('.login__link').addEventListener('click', function () {
   document.getElementById('my__modal').classList.remove('open');
 });
 
+document.querySelector('.reg__link').addEventListener('click', function () {
+  document.getElementById('modal__log_in').classList.add('open__login');
+  document.getElementById('registration').classList.remove('open_reg');
+});
+
+document.querySelector('.btn__login').addEventListener('click', function () {
+  document.getElementById('modal__log_in').classList.add('open__login');
+});
+
 //LOGIN закрыть
 document
   .getElementById('close__login__modal')
@@ -345,16 +315,16 @@ const createProfileWindow = function () {
   const profileBtn = document.querySelector('.user__letters');
 
   profileBtn.addEventListener('click', function () {
-    document.getElementById('my__modal').classList.add('open');
+    // document.getElementById('my__modal').classList.add('open');
     document.getElementById('profile__modal').classList.add('open__prof');
-    document.querySelector('.modal__box').style.display = 'none';
-    document.querySelector('.modal__reg').style.display = 'none';
-    document.querySelector('.modal__card').style.display = 'none';
-    document.querySelector('.modal__profile').style.display = 'block';
+    // document.querySelector('.modal__box').style.display = 'none';
+    // document.querySelector('.modal__reg').style.display = 'none';
+    // document.querySelector('.modal__card').style.display = 'none';
+    // document.querySelector('.modal__profile').style.display = 'block';
   });
 
   document
-    .querySelector('#my__modal .profile__box')
+    .querySelector('#profile__modal .profile__box')
     .addEventListener('click', (event) => {
       event._isClickWithInModalProf = true;
     });
@@ -407,28 +377,24 @@ const addCardNumberInProfileCard = function (elem) {
   profileNumberInCard.textContent = userNumber;
 };
 
-//функция создания модального окна MY PROFILE CARD
+//функция создания модального окна profile (my_profile/logout)
 const createCardModal = function () {
   const profileCardBtn = document.querySelector('.profile__link');
 
   profileCardBtn.addEventListener('click', function () {
-    document.getElementById('my__modal').classList.add('open');
+    document.getElementById('profile__modal').classList.remove('open__prof');
     document.getElementById('card__modal').classList.add('open__card');
-    document.querySelector('.modal__box').style.display = 'none';
-    document.querySelector('.modal__reg').style.display = 'none';
-    document.querySelector('.modal__profile').style.display = 'none';
-    document.querySelector('.modal__card').style.display = 'flex';
   });
 
   document
     .getElementById('close__profile__modal')
     .addEventListener('click', function () {
       document.getElementById('card__modal').classList.remove('open__card');
-      document.getElementById('my__modal').classList.remove('open');
+      // document.getElementById('my__modal').classList.remove('open');
     });
 
   document
-    .querySelector('#my__modal .card__box')
+    .querySelector('#card__modal .card__box')
     .addEventListener('click', (event) => {
       event._isClickWithInModalCard = true;
     });
@@ -439,11 +405,54 @@ const createCardModal = function () {
   });
 };
 
+// функци изменения карты в футере
+const changeCardBlock = function () {
+  // изменение левой части
+  let changeTitle = document.querySelector('.cards__get__subtitle');
+  changeTitle.textContent = 'Visit your profile';
+  let changeTextInCard = document.querySelector('.cards__text');
+  changeTextInCard.textContent =
+    'With a digital library card you get free access to the Library’s wide array of digital resources including e-books, databases, educational resources, and more.';
+  const parent = document.getElementById('cards__get__form');
+  const child = document.querySelector('.btn__get');
+  const childTwo = document.querySelector('.btn__login');
+  parent.removeChild(child);
+  parent.removeChild(childTwo);
+  let newButton = document.createElement('button');
+  newButton.textContent = 'Profile';
+  newButton.classList.add('new__card__profile__btn');
+  parent.append(newButton);
+  const newProfileButton = document.querySelector('.new__card__profile__btn');
+  newProfileButton.addEventListener('click', function () {
+    document.getElementById('card__modal').classList.add('open__card');
+  });
+  // изменение карты с данными
+  const parentCard = document.getElementById('card__form');
+  const childCard = document.querySelector('.cards__btn');
+  parentCard.removeChild(childCard);
+  //
+  const formGetClone = document.querySelector('.cards__border');
+  const formForClone = document.getElementById('card__count_id');
+  const clone = formForClone.cloneNode(true);
+  clone.style.justifyContent = 'center';
+
+  formGetClone.appendChild(clone);
+  // изменение плейсхолдера
+  const placeholderName = document.querySelector('.placeholder__name');
+  const placeholderCard = document.querySelector('.placeholder__card');
+  usersList.forEach((item) => {
+    if (item.status == 'active') {
+      placeholderName.value = `${item.firstname} ${item.lastname}`;
+      placeholderCard.value = `${item.cardnumber}`;
+    }
+  });
+};
+
 //функция выхода LOGOUT
 let logOut = function () {
   const btnLogout = document.querySelector('.logout__link');
   btnLogout.addEventListener('click', function () {
-    document.getElementById('my__modal').classList.remove('open');
+    document.getElementById('profile__modal').classList.remove('open__prof');
 
     let statusUser = localStorage.getItem('user');
     if (statusUser == 'active') {
@@ -455,48 +464,53 @@ let logOut = function () {
         localStorage.setItem('usersList', JSON.stringify(usersList));
       }
     });
+    location.reload();
   });
 };
 
-//ПОЛЬЗОВАТЕЛЬ ЗАРЕГИСТРИРОВАН
-// const userHasActiveStatus = localStorage.getItem('user');
-// if (userHasActiveStatus == 'active')
-// console.log('yes')
+//ПОЛЬЗОВАТЕЛЬ ЗАРЕГИСТРИРОВАН И АКТИВЕН
 
-usersList.forEach((item) => {
-  if (item.status == 'active') {
-    // вставка букв вместо иконки
-    createLettersIcon(item);
+let youAreActiveUser = function () {
+  usersList.forEach((item) => {
+    if (item.status == 'active') {
+      // вставка букв вместо иконки
+      createLettersIcon(item);
 
-    //создание модального окна profile/logout
-    createProfileWindow();
+      //создание модального окна profile/logout
+      createProfileWindow();
 
-    //создание модального окна MY PROFILE CARD
-    createCardModal();
+      //создание модального окна MY PROFILE CARD
+      createCardModal();
 
-    //вставка букв и имени в MY PROFILE CARD
-    addLettersInProfileCard(item);
+      //вставка букв и имени в MY PROFILE CARD
+      addLettersInProfileCard(item);
 
-    //вставка номера карты в MY PROFILE CARD
-    addCardNumberInProfileCard(item);
+      //вставка номера карты в MY PROFILE CARD
+      addCardNumberInProfileCard(item);
 
-    //функция скопировать номер карты в буфер обмена
-    const btnCopy = document.querySelector('.card__copy');
-    btnCopy.onclick = () => {
-      navigator.clipboard.writeText(userNumber);
-    };
+      //функция скопировать номер карты в буфер обмена
+      const btnCopy = document.querySelector('.card__copy');
+      btnCopy.onclick = () => {
+        navigator.clipboard.writeText(userNumber);
+      };
 
-    //функция выхода logout
-    logOut();
+      //функция выхода logout
+      logOut();
 
-    //функция нажатие на кнопки buy - открыть модальное окно покупки карты
-    const putBtnBuy = allBuyBnt.forEach((elem) => {
-      elem.addEventListener('click', function () {
-        buyCardModal(elem);
+      //функция нажатие на кнопки buy - открыть модальное окно покупки карты
+      const putBtnBuy = allBuyBnt.forEach((elem) => {
+        elem.addEventListener('click', function () {
+          buyCardModal(elem);
+        });
       });
-    });
-  }
-});
+    }
+  });
+  changeCardBlock();
+};
+
+if (localStorage.getItem('user')) {
+  youAreActiveUser();
+}
 
 if (!localStorage.getItem('user')) {
   let userLettersIcon = document.querySelector('.user__letters');
@@ -514,11 +528,13 @@ if (!localStorage.getItem('user')) {
 // } catch {}
 // if (status == 'active') {
 //   //активный юзер
-//   return
+//   return;
 // } else {
 //   localStorage.setItem('status', 'active');
 // }
 //   Создание Юзера
+
+// let users = {};
 
 let firstname = document.querySelector('#firstname');
 let lastname = document.querySelector('#lastname');
@@ -526,20 +542,23 @@ let email = document.querySelector('#email');
 let password = document.querySelector('#password');
 let submit = document.querySelector('#submit');
 
-// let users = {};
-
-function User(firstname, lastname, email, password, cardnumber, status) {
+function User(
+  firstname,
+  lastname,
+  email,
+  password,
+  cardnumber,
+  status,
+  librarycard
+) {
   this.firstname = firstname;
   this.lastname = lastname;
   this.email = email;
   this.password = password;
   this.cardnumber = cardnumber;
   this.status = status;
+  this.librarycard = librarycard;
 }
-
-// function createId(users) {
-//     return Object.keys(users).length;
-// }
 
 function createCardnumber() {
   let userNumber = Math.round(Math.random() * 10000000000);
@@ -555,6 +574,7 @@ submit.addEventListener('click', function () {
   const passwordUser = password.value;
   const cardNumber = createCardnumber();
   const status = 'active';
+  const librarycard = 'no';
 
   const user = new User(
     firstNameUser,
@@ -562,7 +582,8 @@ submit.addEventListener('click', function () {
     emailUser,
     passwordUser,
     cardNumber,
-    status
+    status,
+    librarycard
   );
 
   usersList.push(user);
@@ -571,7 +592,7 @@ submit.addEventListener('click', function () {
 });
 
 //счетчик визитов
-let visitCount = 0;
+let visitCount = 1;
 
 //валидация формы регистрации
 
@@ -620,20 +641,21 @@ function validation(form) {
       result = false;
     }
   }
-
+  console.log(result);
   return result;
 }
 
 document
   .getElementById('add__form')
   .addEventListener('submit', function (event) {
-    event.preventDefault();
+    // event.preventDefault();
 
     if (validation(this) == true) {
       alert('Регистрация прошла успешно!');
 
-      visitCount = visitCount + 1;
-      console.log(visitCount);
+      youAreActiveUser();
+
+      document.getElementById('registration').classList.remove('open_reg');
 
       document.querySelector('.card__howmuch__visit').textContent = visitCount;
 
@@ -757,7 +779,14 @@ document
     if (validationCard(this) == true) {
       // alert('успешно')
 
-      localStorage.setItem('liblaryCard', 'active');
+      // localStorage.setItem('liblaryCard', 'active');
+
+      usersList.forEach((elem) => {
+        if ((elem.librarycard = 'no')) {
+          elem.librarycard = 'yes';
+          localStorage.setItem('usersList', JSON.stringify(usersList));
+        }
+      });
 
       document.getElementById('my__modal__buy').classList.remove('open__buy');
 
@@ -794,44 +823,29 @@ document
   });
 
 //LOGIN
-
-function validationLogIn(form) {
-  function removeError(input) {
+let numberActiveUser;
+function newValidation(form) {
+  function newRemoveError(input) {
     const parent = input.parentNode;
 
-    if (parent.classList.contains('error__login')) {
-      parent.querySelector('.error__label__login').remove();
-      parent.classList.remove('error__login');
+    if (parent.classList.contains('new-error')) {
+      parent.querySelector('.new-error-label').remove();
+      parent.classList.remove('new-error');
     }
   }
 
-  function createErrorLogIn(input, text) {
+  function newCreateError(input, text) {
     const parent = input.parentNode;
-    const errorLabel = document.createElement('label');
+    const errorLabel = document.createElement('new-label');
 
-    errorLabel.classList.add('error__label__login');
+    errorLabel.classList.add('new-error-label');
     errorLabel.textContent = text;
 
-    parent.classList.add('error__login');
-
+    parent.classList.add('new-error');
     parent.append(errorLabel);
   }
 
-  // function createErrorData(input, text) {
-  //   const parent = input.parentNode;
-  //   const errorLabel = document.createElement('label');
-
-  //   errorLabel.classList.add('error__label__login');
-  //   errorLabel.textContent = text;
-
-  //   parent.classList.add('error__login');
-
-  //   parent.append(errorLabel);
-  // }
-
   let result = true;
-
-  const allInputs = form.querySelectorAll('input');
 
   let userInputData = document.querySelector('.login__data').value;
   let userInputPassword = document.querySelector('.login__password').value;
@@ -841,51 +855,49 @@ function validationLogIn(form) {
 
   usersList.forEach((elem) => {
     if (elem.cardnumber == userInputData || elem.email == userInputData) {
-      console.log(elem.cardnumber);
-      console.log(userInputData);
-      // result = true;
       dataInput = true;
+      console.log(
+        elem.cardnumber == userInputData || elem.email == userInputData
+      );
       console.log(dataInput);
+      numberActiveUser = elem.cardnumber;
     } else {
       dataInput = false;
+      console.log('ошибка', dataInput);
     }
     if (elem.password == userInputPassword) {
-      // result = true;
       dataPassword = true;
-      console.log(elem.password);
-      console.log(userInputPassword);
-      return dataPassword;
     } else {
       dataPassword = false;
-      return dataPassword;
     }
   });
 
-  for (const input of allInputs) {
-    removeError(input);
-    if (input.value == '') {
-      createErrorLogIn(input, 'Поле не заполнено');
-      result = false;
-    }
-  }
+  const allInputs = form.querySelectorAll('input');
 
   for (const input of allInputs) {
-    removeError(input);
+    newRemoveError(input);
+
+    if (dataInput == false) {
+      newRemoveError(input);
+      newCreateError(input, 'ошибка, заполните поле');
+      result = false;
+    }
+    if (dataPassword == false) {
+      newRemoveError(input);
+      newCreateError(input, 'ошибка, заполните поле');
+      result = false;
+    }
+
+    if (input.value == '') {
+      newRemoveError(input);
+      newCreateError(input, 'ошибка, заполните поле');
+      result = false;
+    }
     if (dataInput == true && dataPassword == true) {
       result = true;
-      console.log(result);
     } else {
-      createErrorLogIn(input, 'пользователь или пароль не зарегистрирован');
       result = false;
-      console.log(result);
     }
-
-    // if (dataPassword == true) {
-    //   result = true;
-    // } else {
-    //   createErrorLogIn(input, 'пользователь или пароль не зарегистрирован');
-    //   result = false;
-    // }
   }
 
   return result;
@@ -894,20 +906,31 @@ function validationLogIn(form) {
 document
   .getElementById('login__form')
   .addEventListener('submit', function (event) {
-    if (validationLogIn(this) == true) {
-      alert('форма проверена');
+    event.preventDefault;
 
-      // смена статуса на active
-      // usersList.forEach((elem) => {
-      //   if (elem.cardnumber == userInputData || elem.email == userInputData) {
-      //     console.log('true data');
+    if (newValidation(this) == true) {
+      alert('ты залогинился');
+      document.getElementById('modal__log_in').classList.remove('open__login');
+      console.log(numberActiveUser);
+      localStorage.setItem('user', 'active');
+      // if (localStorage.getItem('user')) {
+      //   let userLettersIcon = document.querySelector('.user__letters');
+      //   if (userLettersIcon) {
+      //     userLettersIcon.add();
       //   }
-      //   if (elem.password == userInputPassword) {
-      //     console.log('true password');
-      //   }
-      //   elem.status = 'active';
-      //   localStorage.setItem('usersList', JSON.stringify(usersList));
-      // });
+
+      //   document.querySelector('.header__img').style.display = 'none';
+      // }
+
+      usersList.forEach((item) => {
+        if (item.cardnumber == numberActiveUser) {
+          if ((item.status = 'out')) {
+            item.status = 'active';
+            localStorage.setItem('usersList', JSON.stringify(usersList));
+          }
+        }
+      });
+      youAreActiveUser();
     }
   });
 

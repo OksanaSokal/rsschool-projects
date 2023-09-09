@@ -50,117 +50,113 @@
                     Register
                   </p>
                 </div>
-                <div class="modal__reg" id="registration">
-                  <div class="reg__box">
-                    <button class="close__btn" id="close__modal"></button>
-                    <h3 class="registr__title">Register</h3>
-                    <form action="" class="form" id="add__form">
-                      <p class="reg__str">First name</p>
-                      <div class="input__box">
-                        <input
-                          class="reg__input error__field"
-                          type="text"
-                          id="firstname"
-                        />
-                      </div>
-                      <p class="reg__str">Last name</p>
-                      <div class="input__box">
-                        <input
-                          class="reg__input error__field"
-                          type="text"
-                          id="lastname"
-                        />
-                      </div>
-                      <p class="reg__str">E-mail</p>
-                      <div class="input__box">
-                        <input
-                          class="reg__input error__field"
-                          type="email"
-                          id="email"
-                        />
-                      </div>
-                      <p class="reg__str">Password</p>
-                      <div class="input__box">
-                        <input
-                          data-max-length="8"
-                          class="reg__input error__field"
-                          type="password"
-                          autocomplete="on"
-                          id="password"
-                        />
-                      </div>
-                      <button class="btn__submit" type="submit" id="submit">
-                        Sign Up
-                      </button>
-                    </form>
-                    <p class="have__str">
-                      Already have an account?<a class="reg__link">Login</a>
-                    </p>
-                  </div>
+              </div>
+              <div class="modal__profile" id="profile__modal">
+                <div class="profile__box" id="profilebox">
+                  <h3 class="modal__title profile__number"></h3>
+                  <p class="modal__str profile__link">My profile</p>
+                  <p class="modal__str logout__link" id="open__myprofile-btn">
+                    Log Out
+                  </p>
                 </div>
-                <div class="modal__profile" id="profile__modal">
-                  <div class="profile__box" id="profilebox">
-                    <h3 class="modal__title profile__number"></h3>
-                    <p class="modal__str profile__link">My profile</p>
-                    <p class="modal__str logout__link" id="open__myprofile-btn">
-                      Log Out
-                    </p>
-                  </div>
-                </div>
-                <div class="modal__card" id="card__modal">
-                  <div class="card__box" id="cardbox">
-                    <div class="card__black">
-                      <div class="card__initials"></div>
-                      <p class="card__name"></p>
-                    </div>
-                    <div class="card__white">
-                      <button
-                        class="close__profile__btn"
-                        id="close__profile__modal"
-                      ></button>
-                      <h3 class="card__title">My profile</h3>
-                      <div class="card__count">
-                        <div class="card__count_item">
-                          <h4 class="card__rented">Visits</h4>
-                          <img
-                            class="card__img"
-                            src="img/svg/union.svg"
-                            alt="visit"
-                            class="card__icon"
-                          />
-                          <p class="card__howmuch__visit"></p>
-                        </div>
-                        <div class="card__count_item">
-                          <h4 class="card__rented">Bonuses</h4>
-                          <img
-                            class="card__img"
-                            src="img/svg/star.svg"
-                            alt="Bonuses"
-                            class="card__icon"
-                          />
-                          <p class="card__howmuch">1240</p>
-                        </div>
-                        <div class="card__count_item">
-                          <h4 class="card__rented">Books</h4>
-                          <img
-                            class="card__img"
-                            src="img/svg/book.svg"
-                            alt="books"
-                            class="card__icon"
-                          />
-                          <p class="card__howmuch card__howmuch__books"></p>
-                        </div>
-                      </div>
-                      <p class="card__subtitle">Rented books</p>
-                      <ul class="card__rented__list"></ul>
-                      <span class="card__number">Card number</span>
-                      <span class="card__usernumber" id="usernumber"></span>
-                      <img
-                        class="card__copy"
-                        src="img/svg/copy.svg"
-                        alt="copy"
+              </div>
+              <div class="modal__reg" id="registration">
+                <div class="reg__box">
+                  <button class="close__btn" id="close__modal"></button>
+                  <h3 class="registr__title">Register</h3>
+                  <form action="" class="form" id="add__form">
+                    <p class="reg__str">First name</p>
+                    <div class="input__box">
+                      <input
+                        class="reg__input error__field"
+                        type="text"
+                        id="firstname"
                       />
                     </div>
+                    <p class="reg__str">Last name</p>
+                    <div class="input__box">
+                      <input
+                        class="reg__input error__field"
+                        type="text"
+                        id="lastname"
+                      />
+                    </div>
+                    <p class="reg__str">E-mail</p>
+                    <div class="input__box">
+                      <input
+                        class="reg__input error__field"
+                        type="email"
+                        id="email"
+                      />
+                    </div>
+                    <p class="reg__str">Password</p>
+                    <div class="input__box">
+                      <input
+                        data-max-length="8"
+                        class="reg__input error__field"
+                        type="password"
+                        autocomplete="off"
+                        id="password"
+                      />
+                    </div>
+                    <button class="btn__submit" type="submit" id="submit">
+                      Sign Up
+                    </button>
+                  </form>
+                  <p class="have__str">
+                    Already have an account?<a class="reg__link">Login</a>
+                  </p>
+                </div>
+              </div>
+              <div class="modal__card" id="card__modal">
+                <div class="card__box" id="cardbox">
+                  <div class="card__black">
+                    <div class="card__initials"></div>
+                    <p class="card__name"></p>
+                  </div>
+                  <div class="card__white">
+                    <button
+                      class="close__profile__btn"
+                      id="close__profile__modal"
+                    ></button>
+                    <h3 class="card__title">My profile</h3>
+                    <div class="card__count" id="card__count_id">
+                      <div class="card__count_item">
+                        <h4 class="card__rented">Visits</h4>
+                        <img
+                          class="card__img"
+                          src="img/svg/union.svg"
+                          alt="visit"
+                          class="card__icon"
+                        />
+                        <p class="card__howmuch__visit">1</p>
+                      </div>
+                      <div class="card__count_item">
+                        <h4 class="card__rented">Bonuses</h4>
+                        <img
+                          class="card__img"
+                          src="img/svg/star.svg"
+                          alt="Bonuses"
+                          class="card__icon"
+                        />
+                        <p class="card__howmuch">1240</p>
+                      </div>
+                      <div class="card__count_item">
+                        <h4 class="card__rented">Books</h4>
+                        <img
+                          class="card__img"
+                          src="img/svg/book.svg"
+                          alt="books"
+                          class="card__icon"
+                        />
+                        <p class="card__howmuch card__howmuch__books"></p>
+                      </div>
+                    </div>
+                    <p class="card__subtitle">Rented books</p>
+                    <ul class="card__rented__list"></ul>
+                    <span class="card__number">Card number</span>
+                    <span class="card__usernumber" id="usernumber"></span>
+                    <img class="card__copy" src="img/svg/copy.svg" alt="copy" />
                   </div>
                 </div>
               </div>
@@ -270,6 +266,7 @@
                       <input
                         data-min-length="16"
                         type="number"
+                        min="0"
                         class="modal__buy__input"
                       />
                     </div>
@@ -278,26 +275,29 @@
                       <input
                         data-has-length="2"
                         type="number"
+                        min="0"
                         class="modal__expir__code"
                       />
                       <input
                         data-has-length="2"
                         type="number"
+                        min="0"
                         class="modal__expir__code"
                       />
                     </div>
                     <p class="modal__buy__str">CVC</p>
-                    <div class="input__cvc">
+                    <div class="input__cvc cvc__str">
                       <input
                         data-have-length="3"
                         type="number"
+                        min="0"
                         class="modal__expir__code"
                       />
                     </div>
                     <p class="modal__buy__str">Cardholder name</p>
                     <input type="text" class="modal__buy__input" />
                     <p class="modal__buy__str">Postal code</p>
-                    <input type="number" class="modal__buy__input" />
+                    <input type="number" min="0" class="modal__buy__input" />
                     <p class="modal__buy__str">City / Town</p>
                     <input type="text" class="modal__buy__input" />
                     <button class="modal__buy__btn">Buy</button>
@@ -385,9 +385,7 @@
                         a strong, complex protagonist. Not for the faint of
                         heart.
                       </p>
-                      <form action="#">
-                        <button class="favorites__btn">Buy</button>
-                      </form>
+                      <button class="favorites__btn">Buy</button>
                       <img
                         class="favorites__img"
                         src="./img/book.png"
@@ -407,9 +405,7 @@
                         quaint town in upstate New York and befriends a
                         beautiful witch.
                       </p>
-                      <form action="#">
-                        <button class="favorites__btn">Buy</button>
-                      </form>
+                      <button class="favorites__btn">Buy</button>
                       <img
                         class="favorites__img"
                         src="./img/book2.png"
@@ -434,9 +430,7 @@
                         divine significance—an inspired introduction to Dante's
                         main themes.
                       </p>
-                      <form action="#">
-                        <button class="favorites__btn">Buy</button>
-                      </form>
+                      <button class="favorites__btn">Buy</button>
                       <img
                         class="favorites__img"
                         src="./img/book3.png"
@@ -454,9 +448,7 @@
                         (and her family) exploring how the Windsors have evolved
                         and thrived as the modern world has changed around them.
                       </p>
-                      <form action="#">
-                        <button class="favorites__btn">Buy</button>
-                      </form>
+                      <button class="favorites__btn">Buy</button>
                       <img
                         class="favorites__img"
                         src="./img/book4.png"
@@ -478,9 +470,7 @@
                         exploring both the beauty and danger and loss of
                         innocence that is youth.
                       </p>
-                      <form action="#">
-                        <button class="favorites__btn">Buy</button>
-                      </form>
+                      <button class="favorites__btn">Buy</button>
                       <img
                         class="favorites__img"
                         src="./img/book5.png"
@@ -500,9 +490,7 @@
                         violence feels both expansive and intimate, resulting in
                         a lyrical indictment of the way things are.
                       </p>
-                      <form action="#">
-                        <button class="favorites__btn">Buy</button>
-                      </form>
+                      <button class="favorites__btn">Buy</button>
                       <img
                         class="favorites__img"
                         src="./img/book6.png"
@@ -522,9 +510,7 @@
                         on race, and a journal of displacement and belonging,
                         all in one form-defying package of spare prose.
                       </p>
-                      <form action="#">
-                        <button class="favorites__btn">Buy</button>
-                      </form>
+                      <button class="favorites__btn">Buy</button>
                       <img
                         class="favorites__img"
                         src="./img/book7.png"
@@ -544,9 +530,7 @@
                         eventually immigrate. For fans of Isabel Allende and
                         Julia Alvarez.
                       </p>
-                      <form action="#">
-                        <button class="favorites__btn">Buy</button>
-                      </form>
+                      <button class="favorites__btn">Buy</button>
                       <img
                         class="favorites__img"
                         src="./img/book8.png"
@@ -572,9 +556,7 @@
                         for damage their oil fields did to the Amazon and her
                         people
                       </p>
-                      <form action="#">
-                        <button class="favorites__btn">Buy</button>
-                      </form>
+                      <button class="favorites__btn">Buy</button>
                       <img
                         class="favorites__img"
                         src="./img/book9.png"
@@ -595,9 +577,7 @@
                         Businessman, Including 10 More Years of Business
                         Unusual.
                       </p>
-                      <form action="#">
-                        <button class="favorites__btn">Buy</button>
-                      </form>
+                      <button class="favorites__btn">Buy</button>
                       <img
                         class="favorites__img"
                         src="./img/book10.png"
@@ -618,9 +598,7 @@
                         of environmental destruction, racism, sexism, and
                         divisive politics.
                       </p>
-                      <form action="#">
-                        <button class="favorites__btn">Buy</button>
-                      </form>
+                      <button class="favorites__btn">Buy</button>
                       <img
                         class="favorites__img"
                         src="./img/book11.png"
@@ -640,9 +618,7 @@
                         in an erotic tale of villains and dreamers, queens and
                         revolutionaries, lepers and healers.
                       </p>
-                      <form action="#">
-                        <button class="favorites__btn">Buy</button>
-                      </form>
+                      <button class="favorites__btn">Buy</button>
                       <img
                         class="favorites__img"
                         src="./img/book12.png"
@@ -666,9 +642,7 @@
                         don't, examining the possibilities around how we
                         construct and communicate identity.
                       </p>
-                      <form action="">
-                        <button class="favorites__btn">Buy</button>
-                      </form>
+                      <button class="favorites__btn">Buy</button>
                       <img
                         class="favorites__img"
                         src="./img/book13.png"
@@ -688,9 +662,7 @@
                         a quarter of a million refugees from the Armenian
                         Genocide
                       </p>
-                      <form action="#">
-                        <button class="favorites__btn">Buy</button>
-                      </form>
+                      <button class="favorites__btn">Buy</button>
                       <img
                         class="favorites__img"
                         src="./img/book14.png"
@@ -712,9 +684,7 @@
                         the game's all-time greatest performers, the Man of
                         Steal, Rickey Henderson?
                       </p>
-                      <form action="#">
-                        <button class="favorites__btn">Buy</button>
-                      </form>
+                      <button class="favorites__btn">Buy</button>
                       <img
                         class="favorites__img"
                         src="./img/book15.png"
@@ -733,9 +703,7 @@
                         the shared trauma of giving birth to gods from their
                         wounds.
                       </p>
-                      <form action="#">
-                        <button class="favorites__btn">Buy</button>
-                      </form>
+                      <button class="favorites__btn">Buy</button>
                       <img
                         class="favorites__img"
                         src="./img/book16.png"
@@ -859,17 +827,17 @@
             <div class="cards__box">
               <div class="cards__have">
                 <div class="cards__subtitle">Find your Library card</div>
-                <form class="cards__border" action="#">
+                <form class="cards__border" action="#" id="card__form">
                   <div class="cards__input">
                     <p class="cards__input__text">Brooklyn Public Library</p>
                     <input
-                      class="cards__field"
+                      class="cards__field placeholder__name"
                       type="text"
                       placeholder="Reader's name"
                     />
                     <input
-                      class="cards__field"
-                      type="number"
+                      class="cards__field placeholder__card"
+                      type="text"
                       placeholder="Card number"
                     />
                   </div>
@@ -882,8 +850,8 @@
                   You will be able to see a reader card after logging into
                   account or you can register a new account
                 </p>
-                <form action="#">
-                  <button class="cards__get__btn" id="card_get_btn">
+                <form action="#" id="cards__get__form">
+                  <button class="cards__get__btn btn__get" id="card_get_btn">
                     Sign Up
                   </button>
                   <button
