@@ -113,9 +113,17 @@ body {
   top: 15px;
   width: 15px;
   height: 15px;
-  background: url('/library/img/svg/close_btn.svg') 0 0 / contain no-repeat;
+  /* background: url('/library/img/svg/close_btn.svg') 0 0 / contain no-repeat; */
   border: none;
   background-color: transparent;
+}
+
+.close__btn svg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
 }
 .reg__box {
   padding: 20px 25px;
@@ -254,9 +262,15 @@ body {
   top: 15px;
   width: 15px;
   height: 15px;
-  background: url('/library/img/svg/close_btn.svg') 0 0 / contain no-repeat;
+  /* background: url('/library/img/svg/close_btn.svg') 0 0 / contain no-repeat; */
   border: none;
   background-color: transparent;
+}
+
+.close__login__btn svg {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .modal__login__title {
@@ -456,9 +470,15 @@ body {
   top: 25px;
   width: 15px;
   height: 15px;
-  background: url('/library/img/svg/close_btn.svg') 0 0 / contain no-repeat;
+  /* background: url('/library/img/svg/close_btn.svg') 0 0 / contain no-repeat; */
   border: none;
   background-color: transparent;
+}
+
+.close__profile__btn svg {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .card__title {
@@ -863,10 +883,14 @@ li.rented__list:last-child {
   top: 25px;
   width: 15px;
   height: 15px;
-  background: url('/library/img/svg/close_btn_white.svg') 0 0 / contain
-    no-repeat;
+  /* background: url('/library/img/svg/close_btn_white.svg') 0 0 / contain  no-repeat; */
   border: none;
   background-color: transparent;
+}
+.modal__buy-close svg {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .modal__buy-title {
