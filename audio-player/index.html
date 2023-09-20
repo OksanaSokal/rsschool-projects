@@ -5,72 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>audio-player</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="assets/icon/favicon.ico" />
+    <link rel="icon" href="assets/img/favicon.ico" />
   </head>
   <body>
-    <div class="box">
-      <div class="wrapper">
-        <img
-          class="background"
-          src="assets/img/elder_Island-Kape_Fear.jpg"
-          alt="background"
-        />
-        <div class="container">
-          <div class="background-image">
-            <img
-              class="background-player"
-              src="assets/img/elder_Island-Kape_Fear.jpg"
-              alt="photo"
-            />
+    <div class="box-wrap">
+      <div class="box">
+        <div class="wrapper">
+          <img
+            class="background"
+            src="assets/img/elder_Island-Kape_Fear.jpg"
+            alt="background"
+          />
+          <div class="container">
+            <div class="background-image">
+              <img
+                class="background-player"
+                src="assets/img/elder_Island-Kape_Fear.jpg"
+                alt="photo"
+              />
+            </div>
+            <audio class="audio" preload="metadata"></audio>
+            <div class="player-box">
+              <div class="name">
+                <p class="singer">Elder Island</p>
+                <p class="song">Kape Fear</p>
+              </div>
+              <div class="player">
+                <div class="backward-box">
+                  <img
+                    class="backward"
+                    src="assets/svg/backward.svg"
+                    alt="backward"
+                  />
+                </div>
+                <div class="play-pause"></div>
+                <div class="forward-box">
+                  <img
+                    class="forward"
+                    src="assets/svg/forward.svg"
+                    alt="forward"
+                  />
+                </div>
+                </div>
+              </div>
+              <div class="progress-wrap">
+                <div class="progress-container">
+                  <div class="progress">
+                    <img src="assets/svg/ellipse.svg" alt="load">
+                  </div>
+                </div>
+                <div class="time">
+                  <p class="current-time">00:00</p>
+                  <p class="duration"></p>
+                </div>
+              </div>
+            </div>
+            
           </div>
-          <audio class="audio" preload="metadata"></audio>
-          <div class="player-box">
-            <div class="name">
-              <p class="singer">Elder Island</p>
-              <p class="song">Kape Fear</p>
-            </div>
-            <div class="player">
-              <div class="backward-box">
-                <img
-                  class="backward"
-                  src="assets/svg/back.svg"
-                  alt="backward"
-                />
-              </div>
-              <div class="play-pause"></div>
-              <div class="forward-box">
-                <img
-                  class="forward"
-                  src="assets/svg/forward.svg"
-                  alt="forward"
-                />
-              </div>
-              </div>
-            </div>
-            <div class="progress-wrap">
-              <p class="duration"></p>
-              <div class="progress-container">
-                <div class="progress"></div>
-              </div>
-              <p class="current-time">00:00</p>
-            </div>
+        </div>
+        <div class="footer">
+          <div class="year">2023</div>
+          <div class="rsschool">
+            <a href="https://rs.school/js-stage0/" target="_blank">
+              <img class="logo" src="assets/svg/rs_logo.svg" alt="logo" />
+            </a>
           </div>
-          
+          <div class="github">
+            <a href="https://github.com/OksanaSokal" target="_blank">
+              Oksana Petrenko
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="footer">
-        <div class="year">2023</div>
-        <div class="rsschool">
-          <a href="https://rs.school/js-stage0/" target="_blank">
-            <img class="logo" src="assets/icon/rs_logo.svg" alt="logo" />
-          </a>
-        </div>
-        <div class="github">
-          <a href="https://github.com/OksanaSokal" target="_blank">
-            Oksana Petrenko
-          </a>
-        </div>
-      </div>
+    </div>
     </div>
 
     <script src="script.js"></script>

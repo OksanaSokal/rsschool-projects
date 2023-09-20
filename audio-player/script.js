@@ -1,65 +1,3 @@
-// const audio = document.querySelector('audio');
-
-// let isPlay = false;
-
-// function playAudio() {
-//   if (!isPlay) {
-//     audio.currentTime = 0;
-//     audio.play();
-//     isPlay = true;
-//   } else {
-//     audio.pause();
-//     isPlay = false;
-//   }
-// }
-
-// function toggleBtn() {
-//   playButton.classList.toggle('pause-img');
-// }
-// const playButton = document.querySelector('.play-pause');
-
-// playButton.addEventListener('click', () => {
-//   playAudio();
-//   toggleBtn();
-// });
-
-// let playNum = 0;
-
-// function playNext() {
-//   playNum = playNum + 1;
-//   playAudio();
-// }
-// function playPrev() {
-//   playNum--;
-//   playAudio();
-// }
-
-// const playList = [
-//   'assets/audio/elder_Island-Kape_Fear.mp3',
-//   'assets/audio/Florence_The_Machine-Youve_Got_the_Love.mp3',
-//   'assets/audio/Recondite_-_Levo.mp3',
-// ];
-
-// const nextBtn = document.querySelector('.forward-box');
-
-// nextBtn.addEventListener('click', () => {
-//   playList.forEach((elem, index, arr) => {
-//     // playNum = elem[index];
-
-//     audio.src = elem[playNum];
-//     playNext();
-//     console.log(playNum);
-
-//     if (playNum < 0) {
-//       audio.src = elem[arr.length - 1];
-//       playNum = elem[arr.length - 1];
-//     } else if (playNum > arr.length) {
-//       audio.src = elem[0];
-//       playNum = 0;
-//     }
-//   });
-// });
-
 const audio = document.querySelector('.audio'),
   container = document.querySelector('.container'),
   background = document.querySelector('.background'),
@@ -71,14 +9,15 @@ const audio = document.querySelector('.audio'),
   nextBtn = document.querySelector('.forward'),
   progressContainer = document.querySelector('.progress-container'),
   progress = document.querySelector('.progress'),
-  durationSong = document.querySelector('.duration');
+  durationSong = document.querySelector('.duration'),
+  changeImage = document.querySelector('.background-player');
 
-const songsList = ['Kape Fear', "You've Got the Love", 'Levo'];
-const singerList = ['Elder Island', 'Florens + The Machine', 'Recondite'];
+const songsList = ['Kape Fear', "You've Got the Love", 'Mountain at My Gates'];
+const singerList = ['Elder Island', 'Florens + The Machine', 'Foals'];
 const srcSong = [
   'elder_Island-Kape_Fear',
   'Florence_The_Machine-Youve_Got_the_Love',
-  'Recondite_-_Levo',
+  'Foals_-_Mountain_at_My_Gates',
 ];
 
 let songIndex = 0;
@@ -91,8 +30,8 @@ function loadSong(elem) {
   backgroundPlayer.src = `assets/img/${srcSong[songIndex]}.jpg`;
   background.src = `assets/img/${srcSong[songIndex]}.jpg`;
   audio.onloadeddata = () => {
-    console.log(audio.duration);
     const minutes = Math.floor(audio.duration / 60);
+
     const seconds = Math.floor(audio.duration % 60);
 
     durationSong.textContent = `${minutes}:${seconds}`;
@@ -156,6 +95,7 @@ prevBtn.addEventListener('click', () => {
 // Изменение кнопки play/pause
 function toggleBtn() {
   playBtn.classList.toggle('pause-img');
+  changeImage.classList.toggle('change');
 }
 playBtn.addEventListener('click', toggleBtn);
 
