@@ -22,7 +22,7 @@ const srcSong = [
 
 let songIndex = 0;
 
-// внешний вид при загрузке
+// внешний вид при загрузке, загрузка песни
 function loadSong(elem) {
   singer.textContent = elem;
   song.textContent = singerList[songIndex];
@@ -61,6 +61,13 @@ playBtn.addEventListener('click', () => {
   }
 });
 
+// Изменение кнопки play/pause
+function toggleBtn() {
+  playBtn.classList.toggle('pause-img');
+  changeImage.classList.toggle('change');
+}
+playBtn.addEventListener('click', toggleBtn);
+
 //  функция следующей песни
 function nextSong() {
   songIndex++;
@@ -69,7 +76,9 @@ function nextSong() {
     songIndex = 0;
   }
   loadSong(songsList[songIndex]);
-  audioPlay();
+  if (playBtn.classList.contains('pause-img')) {
+    audioPlay();
+  }
 }
 
 nextBtn.addEventListener('click', () => {
@@ -91,13 +100,6 @@ function prevSong() {
 prevBtn.addEventListener('click', () => {
   prevSong();
 });
-
-// Изменение кнопки play/pause
-function toggleBtn() {
-  playBtn.classList.toggle('pause-img');
-  changeImage.classList.toggle('change');
-}
-playBtn.addEventListener('click', toggleBtn);
 
 // Загрузка прогрессбара
 
