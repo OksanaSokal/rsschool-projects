@@ -94,7 +94,9 @@ function prevSong() {
     songIndex = singerList.length - 1;
   }
   loadSong(songsList[songIndex]);
-  audioPlay();
+  if (playBtn.classList.contains('pause-img')) {
+    audioPlay();
+  }
 }
 
 prevBtn.addEventListener('click', () => {
