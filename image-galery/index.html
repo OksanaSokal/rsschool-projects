@@ -9,16 +9,38 @@
   <body>
     <div class="wrapper">
       <header class="header">
-        <div class="header__logo">Unsplash API</div>
-        <input
-          class="header__input"
-          type="search"
-          autocomplete="off"
-          placeholder="search yours pictures "
-        />
+        <div class="header__logo">
+          <img src="svg/photo.svg" alt="icon" />
+          <p>Unsplash API</p>
+        </div>
+
+        <form action="">
+          <input
+            class="header__input"
+            type="search"
+            autocomplete="off"
+            placeholder="search..."
+            autofocus
+          />
+          <button class="button">
+            <img src="svg/search.svg" alt="" />
+          </button>
+        </form>
       </header>
       <main class="container"></main>
-      <footer class="footer">footer</footer>
+      <footer class="footer">
+        <div class="footer__item">2023</div>
+        <div class="footer__item">
+          <a href="https://rs.school/js-stage0/" target="_blank">
+            <img src="svg/rs_school_js.svg" alt="icon" />
+          </a>
+        </div>
+        <div class="footer__item name">
+          <a href="https://github.com/OksanaSokal" target="_blank"
+            >Oksana Petrenko</a
+          >
+        </div>
+      </footer>
     </div>
 
     <script src="script.js"></script>
