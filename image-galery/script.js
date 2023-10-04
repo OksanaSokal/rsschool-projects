@@ -14,7 +14,6 @@ getData(url);
 async function getData(dataLink) {
   const res = await fetch(dataLink);
   const data = await res.json();
-  console.log(data);
 
   const newData = data.results;
 
@@ -35,17 +34,6 @@ function createImage(address) {
   container.append(div);
 }
 
-// async function getDataSearch() {
-//   const res = await fetch(searchUrl);
-//   const data = await res.json();
-//   console.log(data);
-
-//   data.map((item) => {
-
-//     createImage(item.regulars.urls.regular);
-//   });
-// }
-
 form.addEventListener('submit', (elem) => {
   elem.preventDefault();
 
@@ -61,8 +49,6 @@ form.addEventListener('submit', (elem) => {
 const searchBtn = document.querySelector('.button');
 
 searchBtn.addEventListener('click', () => {
-  elem.preventDefault();
-
   let request = input.value;
   const searchUrl = `https://api.unsplash.com/search/photos?per_page=15&query=${request}&client_id=${apiKey}`;
 
