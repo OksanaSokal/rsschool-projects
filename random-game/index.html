@@ -4,21 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="asserts/img/favicon.ico">
+    <link rel="icon" href="asserts/img/favicon.ico" />
     <title>Memory game</title>
   </head>
 
   <body>
     <div class="wrapper">
+      <div class="modal">
+        <audio class="modal__audio" src="asserts/audio/friends.mp3"></audio>
+        <div class="modal__header">Let's play</div>
+        <div class="button_box">
+          <button class="button">
+            <img src="asserts/icon/play.svg" alt="button" />
+          </button>
+        </div>
+        <div class="sound__box play"></div>
+      </div>
+      <div class="modal__win">
+        <p>You won!</p>
+        <p class="final__score"></p>
+        <p class="final__time"></p>
+        <button class="play__again">play again</button>
+      </div>
       <header class="header">
-       <div class="timer">Timer: 0</div>
-        <div class="score"> Score: 0</div>
+        <div class="timer">
+          Time: <span class="minutes">00</span>:<span class="seconds">00</span>
+        </div>
+        <div class="score">Score: 0</div>
       </header>
       <main class="main">
-        <div class="container">
-
+        <div class="container"></div>
+        <audio class="flip_sound" src="asserts/audio/flip2.mp3"></audio>
+        <audio class="mistake_sound" src="asserts/audio/mistake.mp3"></audio>
+        <audio class="win_sound" src="asserts/audio/win.mp3"></audio>
+        <audio
+          class="win_level_sound"
+          src="asserts/audio/win_level.mp3"
+        ></audio>
       </main>
-      <footer class="footer">footer</footer>
+      <footer class="footer">
+        <div class="footer__item">2023</div>
+        <div class="footer__item image">
+          <a href="https://rs.school/js-stage0/">
+            <img src="asserts/icon/rs_school_js.svg" alt="icon" />
+          </a>
+        </div>
+        <div class="footer__item">
+          <a href="https://github.com/OksanaSokal">Oksana Petrenko</a>
+        </div>
+      </footer>
     </div>
 
     <script src="script.js"></script>
