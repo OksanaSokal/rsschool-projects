@@ -1,3 +1,8 @@
+const audioFlip = document.querySelector('.flip_sound'),
+  audioMistake = document.querySelector('.mistake_sound'),
+  audioWin = document.querySelector('.win_sound'),
+  audioWinLevel = document.querySelector('.win_level_sound');
+
 const images = [
   'friends',
   'friends10',
@@ -12,19 +17,18 @@ const images = [
 
 const container = document.querySelector('.container');
 
-const imageList = [...images, ...images];
-
 // создаем игровое поле
 
 function createBoardGame() {
-  let imageCount = imageList.length;
+  const list = [...images, ...images];
+  let imageCount = list.length;
 
   for (let i = 0; i < imageCount; i++) {
-    let randomIndex = Math.floor(Math.random() * imageList.length);
-    let image = imageList[randomIndex];
+    let randomIndex = Math.floor(Math.random() * list.length);
+    let image = list[randomIndex];
 
-    const newCard = createCard(image);
-    imageList.splice(randomIndex, 1);
+    createCard(image);
+    list.splice(randomIndex, 1);
   }
 }
 
@@ -64,7 +68,10 @@ let firstCard, secondCard;
 function flipCard() {
   if (lockBoard) return;
 
+  if (this === firstCard) return;
+
   this.classList.add('flip');
+  audioFlip.play();
 
   if (!open) {
     firstCard = this;
@@ -80,30 +87,65 @@ function flipCard() {
   score.textContent = `Score: ${scoreResult}`;
 }
 
+// закрытие модального окна
+const modal = document.querySelector('.modal');
+const button = document.querySelector('.button');
+const modalAudio = document.querySelector('.modal__audio');
+const buttonMute = document.querySelector('.play');
+const modalWin = document.querySelector('.modal__win');
+
+modal.classList.add('open');
+modalAudio.play();
+
+let myInterval;
+
+button.addEventListener('click', () => {
+  modal.classList.remove('open');
+  modalAudio.pause();
+  myInterval = setInterval(setTimerGame, 1000);
+});
+
+// выключение звука
+buttonMute.addEventListener('click', () => {
+  buttonMute.classList.toggle('mute');
+  if (buttonMute.classList.contains('mute')) {
+    modalAudio.pause();
+  } else {
+    modalAudio.play();
+  }
+});
+
 // функция сравнения карточек
+let countOpenCard = 0;
 function matchCards() {
   if (firstCard.dataset.image === secondCard.dataset.image) {
+    lockBoard = true;
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
+    audioWin.play();
+    countOpenCard += 1;
 
-    lockBoard = true;
     resetCard();
+    if (countOpenCard == 9) {
+      audioWinLevel.play();
+      modalWin.classList.add('open');
+      clearTimeout(myInterval);
+      finalTime.textContent = `Time: ${finalMinute}:${finalSecond}`;
+      finalScore.textContent = `Score: ${scoreResult + 1}`;
+      let newUser = new UserResult();
+      arrUsers.push(newUser);
+      localStorage.setItem('users-result', JSON.stringify(arrUsers));
+    }
   } else {
     lockBoard = true;
     setTimeout(() => {
       firstCard.classList.remove('flip');
       secondCard.classList.remove('flip');
+      audioMistake.play();
       resetCard();
     }, 1000);
   }
 }
-// let time = 0;
-// const timer = document.querySelector('.timer');
-// const setTimerGame = setInterval(function () {
-//   timer.textContent = `Timer: ${(time += 1)}`;
-// }, 1000);
-
-// setTimerGame();
 
 // сброс сравниваемых карточек
 function resetCard() {
@@ -114,3 +156,91 @@ function resetCard() {
 
 const allCards = document.querySelectorAll('.tile');
 allCards.forEach((elem) => elem.addEventListener('click', flipCard));
+
+// счетчик времени
+let seconds = 0;
+let minutes = 0;
+const timer = document.querySelector('.timer');
+const minute = document.querySelector('.minutes');
+const second = document.querySelector('.seconds');
+const finalScore = document.querySelector('.final__score');
+const finalTime = document.querySelector('.final__time');
+let finalMinute, finalSecond;
+
+// вывод времени
+function setTimerGame() {
+  seconds += 1;
+  if (seconds < 10) {
+    second.textContent = `0${seconds}`;
+  }
+  if (seconds >= 10 && seconds < 60) {
+    second.textContent = `${seconds}`;
+  }
+  if (seconds == 60) {
+    second.textContent = `00`;
+    seconds = 0;
+    minutes += 1;
+  }
+  if (minutes < 10) {
+    minute.textContent = `0${minutes}`;
+  }
+  if (minutes >= 10 && minutes < 60) {
+    minute.textContent = `${minutes}`;
+  }
+  finalMinute = minutes;
+  finalSecond = seconds;
+}
+
+if (finalMinute < 10) {
+  finalMinute = `0${finalMinute}`;
+}
+
+if (finalMinute == 0) {
+  finalMinute = '00';
+}
+
+if (finalSecond < 10) {
+  finalSecond = `0${finalSecond}`;
+}
+
+const btnPlayAgain = document.querySelector('.play__again');
+const arrUsers = [];
+
+function UserResult() {
+  this.number = arrUsers.length + 1;
+  this.time = `${finalMinute}:${finalSecond}`;
+  this.score = scoreResult;
+}
+
+// играть опять
+btnPlayAgain.addEventListener('click', () => {
+  let newAllCards = document.querySelectorAll('.tile');
+  newAllCards.forEach((elem) => {
+    elem.remove();
+  });
+  refreshGame(allCards);
+});
+
+// запуск новой игры
+function refreshGame(cards) {
+  console.log(cards);
+  modalWin.classList.remove('open');
+
+  cards.forEach((elem) => {
+    elem.remove();
+  });
+
+  countOpenCard = 0;
+  scoreResult = 0;
+  minute.textContent = '00';
+  second.textContent = '00';
+  score.textContent = `Score: ${scoreResult}`;
+
+  createBoardGame();
+  let newAllCards = document.querySelectorAll('.tile');
+  newAllCards.forEach((elem) => elem.addEventListener('click', flipCard));
+
+  matchCards();
+
+  setInterval(setTimerGame, 1000);
+}
