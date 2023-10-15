@@ -118,7 +118,11 @@ buttonMute.addEventListener('click', () => {
 // функция сравнения карточек
 let countOpenCard = 0;
 function matchCards() {
-  if (firstCard.dataset.image === secondCard.dataset.image) {
+  if (
+    firstCard &&
+    secondCard &&
+    firstCard.dataset.image === secondCard.dataset.image
+  ) {
     lockBoard = true;
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
@@ -136,7 +140,7 @@ function matchCards() {
       arrUsers.push(newUser);
       localStorage.setItem('users-result', JSON.stringify(arrUsers));
     }
-  } else {
+  } else if (firstCard && secondCard) {
     lockBoard = true;
     setTimeout(() => {
       firstCard.classList.remove('flip');
@@ -203,13 +207,18 @@ if (finalSecond < 10) {
   finalSecond = `0${finalSecond}`;
 }
 
+let arrUsers = [];
 const btnPlayAgain = document.querySelector('.play__again');
-const arrUsers = [];
+
+let data = localStorage.getItem('users-result');
+if (data !== '' && data !== null) {
+  arrUsers = JSON.parse(data);
+}
 
 function UserResult() {
   this.number = arrUsers.length + 1;
   this.time = `${finalMinute}:${finalSecond}`;
-  this.score = scoreResult;
+  this.score = scoreResult + 1;
 }
 
 // играть опять
@@ -223,7 +232,6 @@ btnPlayAgain.addEventListener('click', () => {
 
 // запуск новой игры
 function refreshGame(cards) {
-  console.log(cards);
   modalWin.classList.remove('open');
 
   cards.forEach((elem) => {
@@ -232,6 +240,8 @@ function refreshGame(cards) {
 
   countOpenCard = 0;
   scoreResult = 0;
+  minutes = 0;
+  seconds = 0;
   minute.textContent = '00';
   second.textContent = '00';
   score.textContent = `Score: ${scoreResult}`;
@@ -242,5 +252,5 @@ function refreshGame(cards) {
 
   matchCards();
 
-  setInterval(setTimerGame, 1000);
+  myInterval = setInterval(setTimerGame, 1000);
 }

@@ -199,3 +199,12 @@ body {
 .play__again:hover {
   background-color: rgba(72, 71, 69, 0.9);
 }
+
+.results__box {
+  border: 0.5px solid grey;
+}
+
+.result__title {
+  display: flex;
+  border: 0.5px solid grey;
+}
